@@ -9,15 +9,21 @@ models:
           - not_null
   - name: raw_orders
     columns:
+      - name: orderid
+        tests:
+          - unique
+          - not_null
       - name: shipmode
         tests:
           - accepted_values:
-              values: ['Same Day', 'First Class', 'Second Class', 'Standard Class']
-      - name: orderid
-        tests:
-          - unique:
-          - not_null:
+              values:
+                - "Same Day" 
+                - "First Class"
+                - "Second Class"
+                - "Standard Class"
+                - "Unknown"
               
+
                
 
           
